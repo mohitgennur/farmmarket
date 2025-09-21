@@ -1,35 +1,30 @@
-# Agri Market (minimal demo)
+# Agri Web (Minimal Flask site)
 
-This is a small demo app that lists agricultural products and shows market prices. It's intentionally minimal so you can extend it.
+This is a small Flask website with pages: Home, Products, Product Detail, About, and Contact.
 
-Requirements
-- Node.js (16+ recommended)
+Getting started (PowerShell on Windows):
 
-Setup (PowerShell)
+1. Create and activate a virtual environment
 
-1. Install dependencies:
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
 
-   npm install
+2. Install dependencies
 
-2. Seed the database:
+```powershell
+pip install -r requirements.txt
+```
 
-   npm run seed
+3. Run the app
 
-3. Start the server:
+```powershell
+python app.py
+```
 
-   npm start
+Open http://127.0.0.1:5000 in your browser.
 
-Then open http://localhost:3000 in your browser.
-
-What is included
-- `server/` - Express server, SQLite DB and seed script
-- `public/` - Static frontend (HTML/CSS/JS)
-
-Images
-- Product images uploaded from the frontend are stored in the `uploads/` folder and served at `/uploads/<filename>`.
-- When using Docker with the provided `docker-compose.yml`, the project directory is mounted into the container so uploaded files are available locally.
-
-Notes & next steps
-- Add authentication for admin routes
-- Improve UI and add product images
-- Add filtering, sorting, and charts for price history
+Troubleshooting:
+- If executing Activate.ps1 is blocked, run `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` in an elevated PowerShell.
+- If Flask import fails, ensure the venv is activated and `pip install -r requirements.txt` completed successfully.
